@@ -2,7 +2,7 @@ var isExtend = false;
 var isExMode = false; // 新增：标记是否处于 ex 模式（播放录音）
 var typewriterTimer = null;
 var textAfterImg = new Image();
-textAfterImg.src = './res/UI/text.png';
+textAfterImg.src = './res/UI/Text.png';
 var fullText = ""; // 存储完整的文本
 var currentTextIndex = 0; // 当前显示到哪个字符
 var isWaitingForNextPage = false; // 是否正在等待翻页
@@ -701,7 +701,9 @@ function renderText(text, isVirtual = false) {
     
     if (!isVirtual) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(textAfterImg, 0, 0);
+        if (textAfterImg.complete && textAfterImg.naturalHeight !== 0) {
+            ctx.drawImage(textAfterImg, 0, 0);
+        }
         currentClickableAreas = []; // 仅在实际渲染时重置点击区域
     }
     
@@ -1052,7 +1054,7 @@ function initTipsCanvas() {
 // 统一初始化
 window.addEventListener('load', () => {
     initTextCanvas("textBefore", 432, 237, 1, './res/lighting/text.png', clickTB);
-    initTextCanvas("textAfter", 180, 64, 5, './res/UI/text.png');
+    initTextCanvas("textAfter", 180, 64, 5, './res/UI/Text.png');
     initTextCanvas("textBack", 32, 24, 6, './res/UI/back.png', clickTextBack);
     initTextCanvas("text-Over1", 939, 471, 6, './res/UI/talking-over.png');
     initTipsCanvas();
