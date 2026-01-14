@@ -1056,6 +1056,6 @@ window.addEventListener('load', () => {
     initTextCanvas("textBefore", 432, 237, 1, './res/lighting/text.png', clickTB);
     initTextCanvas("textAfter", 180, 64, 5, './res/UI/Text.png');
     initTextCanvas("textBack", 32, 24, 6, './res/UI/back.png', clickTextBack);
-    initTextCanvas("text-Over1", 939, 471, 6, './res/UI/talking-over.png');
+    initTextCanvas("text-Over1", 939, 471, 6, './res/UI/talking-Over.png');
     initTipsCanvas();
 });
