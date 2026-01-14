@@ -1,0 +1,345 @@
+@font-face {
+    font-family: 'Z Labs Bitmap 12px CN';
+    src: url('../fonts/ZLabsBitmap_12px_CN.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Silver';
+    src: url('../fonts/Silver.ttf') format('truetype');
+}
+
+*{
+    margin:0;
+    padding:0;
+
+}
+
+#canvas-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1152px;
+    height: 648px;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+
+#UI canvas {
+    display: none;
+}
+#text-talking,#text-Over,#lantern-Bottom {
+    z-index: 10;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#bgCanvas {
+    outline: 1px dashed #b7f3ff;
+    z-index: 0;
+    
+}
+#hiding {
+    z-index: 3;
+    opacity: 0;
+}
+
+#hiding,#listBotton,#ex1,#ex2,#back0,#textBack,#check,#lantern-Bottom {
+    cursor: pointer;
+}
+
+#item-list, #listBotton, #ex1 ,#ex2,#check{
+    transition: left 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+#item-chose {
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+#bUI canvas{
+    z-index: 11;
+}
+
+#starskyBG {
+    display: none;
+    z-index: 0;
+    animation: fadeout 1s linear infinite alternate ;
+}
+
+#textBefore {
+
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+#moon {
+    opacity:0;
+    z-index: 0;
+}
+
+#b-l canvas {
+    z-index: 1;
+}
+
+.star-canvas {
+    opacity:0;
+    z-index: 2;
+    transition: opacity 1.5s ease;
+    pointer-events: none;
+}
+
+.star-canvas.clickable {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+/* 禁用星星点击的样式 */
+.stars-disabled .star-canvas {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+/* 禁用 lantern-Bottom 点击的样式 */
+.lantern-Bottom-disabled {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+#star-1 { left: 29px; top: 27px; }
+#star-2 { left: 239px; top: 253px; }
+#star-3 { left: 99px; top: 495px; }
+#star-4 { left: 519px; top: 457px; }
+#star-5 { left: 1005px; top: 535px; }
+#star-6 { left: 1035px; top: 127px; }
+#star-7 { left: 575px; top: 33px; }
+
+.click-effect {
+            position: fixed;
+            width: 442px;
+            height: 280px;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            animation: clickAnimation 1s ease-out forwards;
+            background-size: contain;
+            background-repeat: no-repeat;
+            
+        }
+        
+        
+        @keyframes clickAnimation {
+            0% {
+                transform: translate(-50%, -50%) scale(0.4);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+                filter: blur(1px);
+            }
+        }
+         @keyframes fadeout {
+      from { opacity: 1; }
+      to { opacity: 0.3; }
+      }
+      @keyframes lightstar {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+        
+@keyframes zoomFadeOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(3);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(6);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInNext {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fadeInNext0 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade0 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes scale0 {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.anim-scale-0 {
+    animation: scale0 0.5s ease-in forwards;
+}
+
+@keyframes removing {
+    from {
+        opacity:1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes bUI-leave {
+    from {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+    }
+    to {
+        opacity: 0;
+        clip-path: inset(50% 0% 50% 0%);
+    }
+}
+
+@keyframes bottomIn {
+        from {
+        opacity: 0;
+        clip-path: inset(50% 0% 50% 0%);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+.anim-bottom-in {
+    animation: bottomIn 0.3s ease-in forwards;
+}
+.anim-bUI-leave {
+    animation: bUI-leave 0.3s ease-in forwards;
+}
+
+@keyframes itemNameExpand {
+    from {
+        opacity: 0;
+        clip-path: inset(0% 50% 0% 50%);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+
+.anim-item-name-expand {
+    animation: itemNameExpand 0.3s ease-out forwards;
+}
+
+@keyframes itemNameCollapse {
+    from {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+    }
+    to {
+        opacity: 0;
+        clip-path: inset(0% 50% 0% 50%);
+    }
+}
+
+.anim-item-name-collapse {
+    animation: itemNameCollapse 0.3s ease-in forwards;
+}
+
+@keyframes lighted {
+    0% {
+        opacity: 0;
+        clip-path: circle(0% at 50% 50%);
+    }
+    /* 快速展开到一半并第一次卡顿 */
+    40% {
+        opacity: 0.4;
+        clip-path: circle(30% at 50% 50%);
+    }
+    50% {
+        opacity: 0.4;
+        clip-path: circle(30% at 50% 50%);
+    }
+    /* 最终完全展开 */
+    100% {
+        opacity: 0.4;
+        clip-path: circle(100% at 50% 50%);
+    }
+}
+@keyframes leaveLighting {
+    0% {
+        opacity: 0.4;
+        clip-path: circle(100% at 50% 50%);
+    }
+    /* 快速展开到一半并第一次卡顿 */
+    40% {
+        opacity: 0.4;
+        clip-path: circle(30% at 50% 50%);
+    }
+    50% {
+        opacity: 0.4;
+        clip-path: circle(30% at 50% 50%);
+    }
+    /* 最终完全熄灭 */
+    100% {
+        opacity: 0;
+        clip-path: circle(0% at 50% 50%);
+    }
+}
+.anim-zoom-fade-out {
+    animation: zoomFadeOut 0.8s ease-out forwards;
+}
+
+.anim-fade-in-next {
+    animation: fadeInNext 0.8s ease-in forwards;
+}
+.anim-removing {
+    animation: removing 0.8s ease-in forwards;
+}
+.anim-lighted {
+    animation: lighted 1.7s ease-in forwards;
+}
+.anim-leave-lighting {
+    animation: leaveLighting 1.7s ease-in forwards;
+}
+.anim-fade-in-next0 {
+    animation: fadeInNext0 0.8s ease-in forwards;
+}
+.anim-fade0 {
+    animation: fade0 0.8s ease-in forwards;
+}

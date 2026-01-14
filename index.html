@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star,Starry,Stardust</title>
+</head>
+<link rel="stylesheet" href="./css/main.css">
+<body style="background-image: url(./res/bbg.png);">
+    <div style="font-family: 'Z Labs Bitmap 12px CN'; opacity: 0; position: absolute; pointer-events: none;">
+  
+</div>
+        <div style="font-family: 'Silver'; opacity: 0; position: absolute; pointer-events: none;">
+  
+</div>
+    <div id="canvas-container">
+        <!--背景图层-->
+        <canvas id="bgCanvas" width="1152" height="648"></canvas>
+        <!--月亮星星图层-->
+        <g id="m&s">
+        <canvas id="starskyBG" width="1152" height="648"></canvas>
+        <canvas id="moon" width="1152" height="648"></canvas> 
+        </g>
+        <g id="sprite">
+            <canvas id="b-l" width="1152" height="648"></canvas>
+            <canvas id="spriteCanvas" width="1152" height="648"></canvas>    
+        </g>
+        <!--星星图层-->
+        <g id="stars">
+        <canvas id="star-1" class="star-canvas" width="40" height="53"></canvas>
+        <canvas id="star-2" class="star-canvas" width="53" height="47"></canvas>
+        <canvas id="star-3" class="star-canvas" width="42" height="50"></canvas>
+        <canvas id="star-4" class="star-canvas" width="34" height="49"></canvas>
+        <canvas id="star-5" class="star-canvas" width="46" height="46"></canvas>
+        <canvas id="star-6" class="star-canvas" width="39" height="43"></canvas>
+        <canvas id="star-7" class="star-canvas" width="41" height="50"></canvas>
+        </g>
+        <g id="slight">
+            <canvas id="s1l" width="1152" height="648"></canvas>
+            <canvas id="s2l" width="1152" height="648"></canvas>
+            <canvas id="s3l" width="1152" height="648"></canvas>
+            <canvas id="s4l" width="1152" height="648"></canvas>
+            <canvas id="s5l" width="1152" height="648"></canvas>
+            <canvas id="s6l" width="1152" height="648"></canvas>    
+            <canvas id="s7l" width="1152" height="648"></canvas>
+        </g>              
+        <!--UI图层-->
+        <g id="UI">
+            <canvas id="hiding" width="14" height="648"></canvas>
+            <g id="itemlists">
+            <canvas id="item-list" width="88" height="648"></canvas>
+            <canvas id="listBotton" width="6" height="10"></canvas>
+            <canvas id="item-chose" width="74" height="64"></canvas>
+            <canvas id="ex1" width="6" height="10"></canvas>
+            <canvas id="ex2" width="6" height="10"></canvas>
+            <canvas id="back0" width="62" height="56"></canvas>
+            <canvas id="check" width="72" height="24"></canvas>
+            </g>
+            <canvas id="text-talking" width="550" height="240"></canvas>
+            <canvas id="text-Over" width="10" height="6"></canvas>
+            <canvas id="lantern-Bottom" width="230" height="212"></canvas>
+            <canvas id="item-name" width="100" height="32"></canvas>
+        </g>
+        <g id="bUI">
+            <canvas id="bItem" width="1152" height="172"></canvas>
+            <canvas id="bText" width="778" height="420"></canvas>
+            <canvas id="back" width="62" height="56"></canvas>
+        </g>
+        <!--物品图层-->
+        <g id="item">
+            <canvas id="latten" width="74" height="64"></canvas>
+            <canvas id="rec-s1" width="74" height="64"></canvas>
+            <canvas id="rec-s2" width="74" height="64"></canvas>
+            <canvas id="rec-s3" width="74" height="64"></canvas>
+            <canvas id="rec-s4" width="74" height="64"></canvas>
+            <canvas id="rec-s5" width="74" height="64"></canvas>
+            <canvas id="rec-s6" width="74" height="64"></canvas>
+            <canvas id="rec-s7" width="74" height="64"></canvas>
+            
+        </g>
+        <!--文字图层-->
+        <g id="text">
+    <canvas id="textBefore" width="268" height="164"></canvas>
+    <canvas id="textAfter" width="778" height="420"></canvas>
+    <canvas id="textBack" width="62" height="56"></canvas>
+    <canvas id="text-Over1" width="10" height="6"></canvas>
+    <canvas id="tips" width="268" height="32"></canvas>
+        </g>
+        <!--波纹图层-->
+        <g id="wave">
+            <canvas id="wave" width="130" height="130"></canvas>
+        </g>
+        <!--开始界面图层-->
+        <g id="Opening">
+            <canvas id="OpenBG" width="1152" height="648"></canvas>
+            <canvas id="title" width="1061" height="100"></canvas>
+            <canvas id="start" width="120" height="31"></canvas>
+            <canvas id="readme" width="120" height="31"></canvas>
+        </g>
+     
+    </div>
+</body>
+<script src="./js/howler.js-2.2.4/dist/howler.min.js"></script>
+<script src="./js/bg.js"></script>
+<script src="./js/moon.js"></script>
+<script src="./js/blight.js"></script>
+<script src="./js/lighting.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/stars.js"></script>
+<script src="./js/UI.js"></script>
+<script src="./js/item.js"></script>
+<script src="./js/bUI.js"></script>
+<script src="./js/text.js"></script>
+<script src="./js/sounds.js"></script>
+<script src="./js/Opening.js"></script>
+</html>
